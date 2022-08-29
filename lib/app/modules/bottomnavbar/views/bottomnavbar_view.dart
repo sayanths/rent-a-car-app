@@ -1,3 +1,4 @@
+import 'package:carzz/app/constants/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,6 +10,7 @@ class BottomnavbarView extends GetView<BottomnavbarController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
+     
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: controller.state.value == HomeState.home ? 0 : 1,
             onTap: (index) =>
