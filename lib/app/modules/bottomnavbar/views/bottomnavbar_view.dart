@@ -12,6 +12,7 @@ class BottomnavbarView extends GetView<BottomnavbarController> {
     return Obx(() => Scaffold(
      
           bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Colors.black,
             currentIndex: controller.state.value == HomeState.home ? 0 : 1,
             onTap: (index) =>
                 index == 0 ? controller.selectHome() : controller.selectName(),
