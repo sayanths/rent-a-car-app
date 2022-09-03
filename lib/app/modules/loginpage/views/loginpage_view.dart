@@ -1,20 +1,18 @@
-<<<<<<< HEAD
 import 'package:carzz/app/constants/colors/colors.dart';
 import 'package:carzz/app/constants/fonts/fonts.dart';
 import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
 import 'package:carzz/app/modules/home/views/widget/bg_color.dart';
-=======
->>>>>>> d05e25ab358ce0133c0f7a7ba2d715060498a199
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/loginpage_controller.dart';
+import 'widgets/forgot_pas.dart';
+import 'widgets/textfield.dart';
 
 class LoginpageView extends GetView<LoginpageController> {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: black,
@@ -28,13 +26,12 @@ class LoginpageView extends GetView<LoginpageController> {
                 style: gfontsubtitlefont(cl: white, sz: 40),
               ),
               height50,
-              height30,
               Container(
                 height: size.height / 2,
                 width: size.width / 1.1,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: white,
+                  color: Colors.white10,
                 ),
                 child: Padding(
                   padding:
@@ -45,73 +42,51 @@ class LoginpageView extends GetView<LoginpageController> {
                           alignment: Alignment.topLeft,
                           child: Text(
                             "Mobile Number",
-                            style: gfontsubtitlefont(),
+                            style: gfontsubtitlefont(cl: white, sz: 22),
                           )),
-                      height10,
-                      Container(
-                        height: size.height / 13,
-                        width: size.width / 1.5,
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: CustomLoginContainer(size: size),
-                            ),
-                            Expanded(
-                              flex: 4,
-                              child: Container(
-                                color: black,
-                              ),
-                            ),
-                          ],
+                      height30,
+                      CustomTextField(
+                        keyboard: TextInputType.number,
+                        size: size,
+                        icon: Icons.phone,
+                        title: 'Please enter number',
+                      ),
+                      height30,
+                      SizedBox(
+                        width: size.width / 2,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text("Log in"),
+                          style: ElevatedButton.styleFrom(
+                            primary: Color.fromARGB(255, 0, 20, 238),
+                            shape: StadiumBorder(),
+                          ),
                         ),
                       ),
+                      ForgotPasswordAndCreateAccount(
+                          function: () {},
+                          title: 'Forgot password ? ',
+                          subTitle: ' click here'),
+                      ForgotPasswordAndCreateAccount(
+                          function: () {},
+                          title: "Don't have an account ? ",
+                          subTitle: ' create'),
+                      height30,
+                      InkWell(
+                        onTap: () {},
+                        child: Image.network(
+                          "https://res.cloudinary.com/sayanth/image/upload/v1662220924/zara%27s%20shopping%20app/zara%20shopping/google_vnwqmg.png",
+                          height: 50,
+                        ),
+                      )
                     ],
                   ),
                 ),
               ),
             ],
           ),
-=======
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('LoginpageView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'LoginpageView is working',
-          style: TextStyle(fontSize: 20),
->>>>>>> d05e25ab358ce0133c0f7a7ba2d715060498a199
         ),
       ),
     );
   }
 }
-<<<<<<< HEAD
-
-class CustomLoginContainer extends StatelessWidget {
-  const CustomLoginContainer({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  final Size size;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: size.height / 13,
-      width: size.width / 1.5,
-      decoration: BoxDecoration(
-        color: red,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(15),
-          bottomLeft: Radius.circular(15),
-        ),
-      ),
-      child: Icon(Icons.phone),
-    );
-  }
-}
-=======
->>>>>>> d05e25ab358ce0133c0f7a7ba2d715060498a199
