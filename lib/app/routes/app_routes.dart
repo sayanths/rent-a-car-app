@@ -11,6 +11,8 @@ abstract class Routes {
   static const NOTIFICATIONS = _Paths.NOTIFICATIONS;
   static const PROFILEVIEW = _Paths.PROFILEVIEW;
   static const FULL_SCREEN = _Paths.FULL_SCREEN;
+  static const LOGINPAGE = _Paths.LOGINPAGE;
+  static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
 }
 
 abstract class _Paths {
@@ -21,4 +23,6 @@ abstract class _Paths {
   static const NOTIFICATIONS = '/notifications';
   static const PROFILEVIEW = '/profileview';
   static const FULL_SCREEN = '/full-screen';
+  static const LOGINPAGE = '/loginpage';
+  static const SPLASHSCREEN = '/splashscreen';
 }
