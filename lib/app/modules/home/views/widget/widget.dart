@@ -130,3 +130,25 @@ class CustomBrandLogo extends StatelessWidget {
   }
 }
 
+// class Location extends StatelessWidget {
+//   const Location({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children: [
+//         Icon(
+//           Icons.location_pin,
+//           color: white,
+//         ),
+//         Location(),
+//         Text(
+//           "Kannur , kerala,India",
+//           style: Lato(cl: white, sz: 15),
+//         )
+//       ],
+//     );
+//   }
+// }

@@ -11,6 +11,11 @@ dependencies:
   flutter: 
     sdk: flutter
   google_fonts: ^3.0.1
+  iconify_flutter: ^0.0.4
+  carousel_slider: ^4.1.1
+  flutter_image_slideshow: ^0.1.4
+  
+  
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
