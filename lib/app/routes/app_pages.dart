@@ -8,10 +8,14 @@ import 'package:carzz/app/modules/full_screen/bindings/full_screen_binding.dart'
 import 'package:carzz/app/modules/full_screen/views/full_screen_view.dart';
 import 'package:carzz/app/modules/home/bindings/home_binding.dart';
 import 'package:carzz/app/modules/home/views/home_view.dart';
+import 'package:carzz/app/modules/loginpage/bindings/loginpage_binding.dart';
+import 'package:carzz/app/modules/loginpage/views/loginpage_view.dart';
 import 'package:carzz/app/modules/notifications/bindings/notifications_binding.dart';
 import 'package:carzz/app/modules/notifications/views/notifications_view.dart';
 import 'package:carzz/app/modules/profileview/bindings/profileview_binding.dart';
 import 'package:carzz/app/modules/profileview/views/profileview_view.dart';
+import 'package:carzz/app/modules/splashscreen/bindings/splashscreen_binding.dart';
+import 'package:carzz/app/modules/splashscreen/views/splashscreen_view.dart';
 import 'package:carzz/app/modules/view_all/bindings/view_all_binding.dart';
 import 'package:carzz/app/modules/view_all/views/view_all_view.dart';
 
@@ -20,7 +24,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.BOTTOMNAVBAR;
+  static const INITIAL = Routes.SPLASHSCREEN;
 
   static final routes = [
     GetPage(
@@ -57,6 +61,16 @@ class AppPages {
       name: _Paths.FULL_SCREEN,
       page: () => FullScreenView(),
       binding: FullScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGINPAGE,
+      page: () => LoginpageView(),
+      binding: LoginpageBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASHSCREEN,
+      page: () => SplashscreenView(),
+      binding: SplashscreenBinding(),
     ),
   ];
 }

@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 import 'package:carzz/app/constants/colors/colors.dart';
 import 'package:carzz/app/constants/fonts/fonts.dart';
 import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
 import 'package:carzz/app/modules/home/views/widget/bg_color.dart';
+=======
+>>>>>>> d05e25ab358ce0133c0f7a7ba2d715060498a199
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -11,6 +14,7 @@ import '../controllers/loginpage_controller.dart';
 class LoginpageView extends GetView<LoginpageController> {
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: black,
@@ -67,11 +71,23 @@ class LoginpageView extends GetView<LoginpageController> {
               ),
             ],
           ),
+=======
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('LoginpageView'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Text(
+          'LoginpageView is working',
+          style: TextStyle(fontSize: 20),
+>>>>>>> d05e25ab358ce0133c0f7a7ba2d715060498a199
         ),
       ),
     );
   }
 }
+<<<<<<< HEAD
 
 class CustomLoginContainer extends StatelessWidget {
   const CustomLoginContainer({
@@ -97,3 +113,5 @@ class CustomLoginContainer extends StatelessWidget {
     );
   }
 }
+=======
+>>>>>>> d05e25ab358ce0133c0f7a7ba2d715060498a199
