@@ -14,6 +14,9 @@ const height10 = SizedBox(
 const height50 = SizedBox(
   height: 50,
 );
+const width15 = SizedBox(
+  height: 15,
+);
 
 class CustomGlassContainer extends StatelessWidget {
   const CustomGlassContainer({
