@@ -4,6 +4,8 @@ import '../../../../constants/colors/colors.dart';
 
 Widget customContainer(Widget child) {
   return Container(
+    height: double.infinity,
+    width: double.infinity,
     decoration: BoxDecoration(
       gradient: LinearGradient(
         end: Alignment.bottomCenter,

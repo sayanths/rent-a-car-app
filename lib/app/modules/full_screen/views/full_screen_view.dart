@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../home/views/widget/bg_color.dart';
 import '../controllers/full_screen_controller.dart';
+import 'widget/bottom_nav_items.dart';
 
 class FullScreenView extends GetView<FullScreenController> {
   @override
@@ -14,35 +15,57 @@ class FullScreenView extends GetView<FullScreenController> {
       child: Scaffold(
         backgroundColor: black,
         body: customContainer(
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        Get.back();
-                      },
-                      icon: Icon(
-                        Icons.arrow_back_ios_new,
-                        color: white,
-                      )),
-                  Spacer(),
-                  Text(
-                    "Lamporgini",
-                    style: Lato(cl: white, fw: FontWeight.bold, sz: 30),
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        icon: Icon(
+                          Icons.arrow_back_ios_new,
+                          color: white,
+                        )),
+                    Spacer(),
+                    Text(
+                      "Lamborgini",
+                      style: Lato(cl: white, fw: FontWeight.bold, sz: 30),
+                    ),
+                    Spacer(),
+                  ],
+                ),
+                height30,
+                Image.network(
+                    "https://www.supercars.net/blog/wp-content/uploads/2022/01/lamborghini-aventador-lp-780-4-ultimae.jpg"),
+                height30,
+                Row(
+                  children: [],
+                ),
+                Text(
+                  "Details",
+                  style:
+                      gfontsubtitlefont(cl: white, sz: 25, fw: FontWeight.bold),
+                ),
+                height10,
+                Text(
+                  "Its Lamporgini Aventure in 2014.vechile is in good condition and so scratch .All papers are clear and insurance upto january 30 2025. km run upto 20,000.",
+                  style: Lato(
+                    cl: grey,
                   ),
-                  Spacer(),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: Container(
-          height: size.height / 6,
+          height: size.height / 5,
           width: size.width,
           decoration: BoxDecoration(
-            color: white,
+            color: Color.fromARGB(255, 20, 1, 37),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(50),
               topRight: Radius.circular(50),
@@ -58,47 +81,39 @@ class FullScreenView extends GetView<FullScreenController> {
                   FullViewCallAndChat(
                     colorx: darkBlue,
                     function: () {},
-                    title: 'call',
+                    title: 'Chat',
                     icon: Icons.message,
-                  )
+                  ),
+                  FullViewCallAndChat(
+                    colorx: darkBlue,
+                    function: () {},
+                    title: 'call',
+                    icon: Icons.call,
+                  ),
                 ],
+              ),
+              height10,
+              height10,
+              Container(
+                height: size.height / 20,
+                width: size.width / 1.2,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 0, 167, 250),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: Text(
+                    "Book Now",
+                    style: gfontsubtitlefont(
+                      cl: white,
+                      fw: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class FullViewCallAndChat extends StatelessWidget {
-  final Function function;
-  final String title;
-  final IconData icon;
-  final Color colorx;
-  FullViewCallAndChat({
-    Key? key,
-    required this.function,
-    required this.title,
-    required this.icon,
-    required this.colorx,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: function(),
-      icon: Icon(
-        icon,
-        color: white,
-      ),
-      label: Text(
-        title,
-        style: gfontsubtitlefont(cl: white),
-      ),
-      style: ElevatedButton.styleFrom(
-        shape: StadiumBorder(),
-        
       ),
     );
   }
