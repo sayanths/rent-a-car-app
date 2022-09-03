@@ -62,11 +62,11 @@ class AppPages {
       page: () => FullScreenView(),
       binding: FullScreenBinding(),
     ),
-    GetPage(
-      name: _Paths.LOGINPAGE,
-      page: () => LoginpageView(),
-      binding: LoginpageBinding(),
-    ),
+    // GetPage(
+    //   name: _Paths.LOGINPAGE,
+    //   page: () => LoginpageView(),
+    //   binding: LoginpageBinding(),
+    // ),
     GetPage(
       name: _Paths.SPLASHSCREEN,
       page: () => SplashscreenView(),
