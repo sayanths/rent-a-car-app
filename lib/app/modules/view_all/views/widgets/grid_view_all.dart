@@ -9,17 +9,19 @@ class ViewAllGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Stack(
       children: [
         Container(
-          height: 230,
-          width: 200,
+          height: size.height / 3.6,
+          width: size.width / 2,
           decoration: BoxDecoration(
             color: Colors.white10,
             image: DecorationImage(
               image: NetworkImage(
-                "https://mercuryautotransport.com/wp-content/uploads/2021/06/Luxury-Cars-for-2022.jpg",
+                "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/images-s/S2_502326_M.jpg",
               ),
+              fit: BoxFit.cover,
             ),
             borderRadius: BorderRadius.circular(15),
           ),
@@ -33,7 +35,7 @@ class ViewAllGridView extends StatelessWidget {
                   icon: Icon(
                     Icons.favorite,
                     color: red,
-                    size: 30,
+                    size: 30.0,
                   ),
                 ),
               ),
@@ -42,10 +44,10 @@ class ViewAllGridView extends StatelessWidget {
                 child: Stack(
                   children: [
                     Container(
-                      height: 30,
-                      width: 185,
+                      height: 40,
+                      width: size.width / 2,
                       decoration: BoxDecoration(
-                        color: blue,
+                        color: black,
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(15),
                             bottomRight: Radius.circular(15)),

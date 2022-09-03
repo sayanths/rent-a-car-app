@@ -113,15 +113,16 @@ class ViewAllView extends GetView<ViewAllController> {
                 ),
               ],
             ),
-            height30,
+            height10,
             LimitedBox(
               maxHeight: 450,
               child: GridView.builder(
+                  padding: EdgeInsets.all(10),
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                       maxCrossAxisExtent: 200,
                       childAspectRatio: 3 / 3,
-                      crossAxisSpacing: 25,
-                      mainAxisSpacing: 25),
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20),
                   itemCount: 10,
                   itemBuilder: (BuildContext ctx, index) {
                     return ViewAllGridView();
@@ -136,6 +137,6 @@ class ViewAllView extends GetView<ViewAllController> {
 
 final list = [
   'https://img.freepik.com/premium-psd/car-social-media-instagram-post-square-web-banner-advertising-template_177160-364.jpg?w=2000',
-  'https://img.freepik.com/premium-psd/car-social-media-instagram-post-square-web-banner-advertising-template_177160-364.jpg?w=2000',
-  'https://img.freepik.com/premium-psd/car-social-media-instagram-post-square-web-banner-advertising-template_177160-364.jpg?w=2000',
+  'https://img.etimg.com/photo/msid-81432986,imgsize-387481/BMWEmbed1.jpg',
+  'http://www.blog.sagmart.com/wp-content/uploads/2014/10/91449abd-0eca-448b-94c2-aff487fda545.jpg',
 ];
