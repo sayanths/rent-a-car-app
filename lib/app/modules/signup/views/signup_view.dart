@@ -24,28 +24,8 @@ class SignupView extends GetView<SignupController> {
             child: Column(
               children: [
                 height50,
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: IconButton(
-                          onPressed: () {
-                            Get.back();
-                          },
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            color: white,
-                          )),
-                    ),
-                    Text(
-                      "Create an Account",
-                      style: gfontsubtitlefont(
-                        cl: white,
-                        sz: 30,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                CustomBackArrowWithTitle(
+                  title: 'Create an Account',
                 ),
                 height50,
                 LoginGlassContainer(
@@ -77,10 +57,8 @@ class SignupView extends GetView<SignupController> {
                         width: size.width / 1.5,
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.offAll(
-                              () => BottomnavbarView(),
-                              transition: Transition.circularReveal,
-                            );
+                            Get.offAll(() => BottomnavbarView(),
+                                transition: Transition.circularReveal);
                           },
                           child: Text("Create"),
                           style: ElevatedButton.styleFrom(
@@ -97,6 +75,41 @@ class SignupView extends GetView<SignupController> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomBackArrowWithTitle extends StatelessWidget {
+  final String title;
+  const CustomBackArrowWithTitle({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: white,
+              )),
+        ),
+        Text(
+          title,
+          style: gfontsubtitlefont(
+            cl: white,
+            sz: 30,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }

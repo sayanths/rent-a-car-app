@@ -6,7 +6,7 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Car Rent",
+      title: "CrazyLux",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       // home: ResponsiveLayout(
