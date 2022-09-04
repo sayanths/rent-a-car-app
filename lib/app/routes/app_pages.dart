@@ -4,6 +4,8 @@ import 'package:carzz/app/modules/bottomnavbar/bindings/bottomnavbar_binding.dar
 import 'package:carzz/app/modules/bottomnavbar/views/bottomnavbar_view.dart';
 import 'package:carzz/app/modules/favourite/bindings/favourite_binding.dart';
 import 'package:carzz/app/modules/favourite/views/favourite_view.dart';
+import 'package:carzz/app/modules/forgotpassword/bindings/forgotpassword_binding.dart';
+import 'package:carzz/app/modules/forgotpassword/views/forgotpassword_view.dart';
 import 'package:carzz/app/modules/full_screen/bindings/full_screen_binding.dart';
 import 'package:carzz/app/modules/full_screen/views/full_screen_view.dart';
 import 'package:carzz/app/modules/home/bindings/home_binding.dart';
@@ -71,13 +73,18 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SPLASHSCREEN,
-      page: () => SplashscreenView(),
+      page: () => MyCustomSplashScreen(),
       binding: SplashscreenBinding(),
     ),
     GetPage(
       name: _Paths.SIGNUP,
       page: () => SignupView(),
       binding: SignupBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORGOTPASSWORD,
+      page: () => ForgotpasswordView(),
+      binding: ForgotpasswordBinding(),
     ),
   ];
 }

@@ -16,7 +16,7 @@ class AvailableCarsContainer extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(5),
       height: 140,
-      width: size.width / 1,
+      width: double.infinity,
       decoration: BoxDecoration(
         color: white,
         borderRadius: BorderRadius.circular(20),
@@ -29,6 +29,7 @@ class AvailableCarsContainer extends StatelessWidget {
               Image.network(
                 "https://www.pngall.com/wp-content/uploads/5/Lamborghini-Aventador-PNG-File-Download-Free.png",
                 height: 100,
+                fit: BoxFit.contain,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
