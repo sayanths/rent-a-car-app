@@ -127,16 +127,24 @@ class HomeView extends GetView<HomeController> {
 final lateestCarList = [
   CartLisr(
       image:
-          "https://www.kindpng.com/picc/m/423-4235121_car-vector-hd-of-worldwide-car-design-audi.png",
+          "https://res.cloudinary.com/sayanth/image/upload/v1662302974/zara%27s%20shopping%20app/zara%20shopping/kindpng_3333962_mgnqsi.png",
+      name: "Audi"),
+  CartLisr(
+      image:
+          "https://res.cloudinary.com/sayanth/image/upload/v1662302972/zara%27s%20shopping%20app/zara%20shopping/kindpng_1750942_rs9f3o.png",
+      name: "Sunny"),
+  CartLisr(
+      image:
+          "https://res.cloudinary.com/sayanth/image/upload/v1662302972/zara%27s%20shopping%20app/zara%20shopping/kindpng_1465259_fgbcox.png",
       name: "Porche"),
-  CartLisr(
+       CartLisr(
       image:
-          "https://www.kindpng.com/picc/m/333-3333962_background-audi-png-auto-car-images-download-wallpaper.png",
-      name: "Lamborgini"),
-  CartLisr(
+          "https://res.cloudinary.com/sayanth/image/upload/v1662303349/zara%27s%20shopping%20app/zara%20shopping/kindpng_1055696_w42zc1.png",
+      name: "Mustank"),
+       CartLisr(
       image:
-          "https://www.kindpng.com/picc/m/142-1429633_land-design-bumper-motor-vehicle-sport-utility-vehicle.png",
-      name: "Auodi")
+          "https://res.cloudinary.com/sayanth/image/upload/v1662303348/zara%27s%20shopping%20app/zara%20shopping/kindpng_4789728_v49vxf.png",
+      name: "Mini Cooper"),
 ];
 
 class CartLisr {

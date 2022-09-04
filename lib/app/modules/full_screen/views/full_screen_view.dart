@@ -3,11 +3,13 @@ import 'package:carzz/app/constants/fonts/fonts.dart';
 import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../home/views/home_view.dart';
 import '../../home/views/widget/bg_color.dart';
 import '../controllers/full_screen_controller.dart';
 import 'widget/bottom_nav_items.dart';
 
 class FullScreenView extends GetView<FullScreenController> {
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

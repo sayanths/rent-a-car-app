@@ -1,6 +1,7 @@
 import 'package:carzz/app/constants/colors/colors.dart';
 import 'package:carzz/app/constants/fonts/fonts.dart';
 import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
+import 'package:carzz/app/modules/bottomnavbar/views/bottomnavbar_view.dart';
 import 'package:carzz/app/modules/home/views/widget/bg_color.dart';
 import 'package:carzz/app/modules/loginpage/views/forgotpassword_view.dart';
 import 'package:carzz/app/modules/signup/views/signup_view.dart';
@@ -59,7 +60,9 @@ class LoginpageView extends GetView<LoginpageController> {
                         SizedBox(
                           width: size.width / 2,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.offAll(() => BottomnavbarView());
+                            },
                             child: Text("Log in"),
                             style: ElevatedButton.styleFrom(
                               primary: Color.fromARGB(255, 0, 20, 238),

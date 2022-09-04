@@ -99,19 +99,20 @@ class ProfileviewView extends GetView<ProfileviewController> {
                       height30,
                       ProfileOrderList(
                         function: () {},
-                        icon: Icons.history,
-                        title: ' History',
+                        icon: Icons.support,
+                        title: ' Support',
                       ),
                       height30,
                       ProfileOrderList(
                           function: () {},
-                          icon: Icons.add,
-                          title: 'Change Address'),
+                          icon: Icons.person,
+                          title: 'Be a seller'),
                       height30,
                       ProfileOrderList(
                           function: () {},
-                          icon: Icons.person,
-                          title: 'Be A Seller'),
+                          icon: Icons.home,
+                          title: 'About us'),
+                          
                       height10,
                       ElevatedButton.icon(
                         onPressed: () {},
