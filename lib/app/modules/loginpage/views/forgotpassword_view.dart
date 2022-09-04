@@ -1,13 +1,13 @@
-import 'package:carzz/app/constants/colors/colors.dart';
-import 'package:carzz/app/constants/fonts/fonts.dart';
-import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
-import 'package:carzz/app/modules/home/views/widget/bg_color.dart';
-import 'package:carzz/app/modules/signup/views/signup_view.dart';
+import 'package:carzz/app/modules/loginpage/views/otp_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/forgotpassword_controller.dart';
+import '../../../constants/colors/colors.dart';
+import '../../../constants/fonts/fonts.dart';
+import '../../../constants/widgets/custom_size/custom_size.dart';
+import '../../home/views/widget/bg_color.dart';
+import '../../signup/views/signup_view.dart';
 
-class ForgotpasswordView extends GetView<ForgotpasswordController> {
+class ForgotpasswordView extends GetView {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -43,7 +43,9 @@ class ForgotpasswordView extends GetView<ForgotpasswordController> {
               ),
               height30,
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.off(() => OtpView());
+                },
                 child: Text(
                   "Sent otp",
                 ),
