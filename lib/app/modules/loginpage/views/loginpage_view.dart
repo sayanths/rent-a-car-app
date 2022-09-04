@@ -2,6 +2,7 @@ import 'package:carzz/app/constants/colors/colors.dart';
 import 'package:carzz/app/constants/fonts/fonts.dart';
 import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
 import 'package:carzz/app/modules/home/views/widget/bg_color.dart';
+import 'package:carzz/app/modules/signup/views/signup_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -68,7 +69,11 @@ class LoginpageView extends GetView<LoginpageController> {
                           title: 'Forgot password ? ',
                           subTitle: ' click here'),
                       ForgotPasswordAndCreateAccount(
-                          function: () {},
+                          function: () {
+                            Get.to(
+                              () => SignupView(),
+                            );
+                          },
                           title: "Don't have an account ? ",
                           subTitle: ' create'),
                       height30,

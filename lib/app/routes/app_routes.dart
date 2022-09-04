@@ -13,6 +13,7 @@ abstract class Routes {
   static const FULL_SCREEN = _Paths.FULL_SCREEN;
   static const LOGINPAGE = _Paths.LOGINPAGE;
   static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
+  static const SIGNUP = _Paths.SIGNUP;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const FULL_SCREEN = '/full-screen';
   static const LOGINPAGE = '/loginpage';
   static const SPLASHSCREEN = '/splashscreen';
+  static const SIGNUP = '/signup';
 }

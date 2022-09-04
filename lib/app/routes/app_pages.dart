@@ -14,6 +14,8 @@ import 'package:carzz/app/modules/notifications/bindings/notifications_binding.d
 import 'package:carzz/app/modules/notifications/views/notifications_view.dart';
 import 'package:carzz/app/modules/profileview/bindings/profileview_binding.dart';
 import 'package:carzz/app/modules/profileview/views/profileview_view.dart';
+import 'package:carzz/app/modules/signup/bindings/signup_binding.dart';
+import 'package:carzz/app/modules/signup/views/signup_view.dart';
 import 'package:carzz/app/modules/splashscreen/bindings/splashscreen_binding.dart';
 import 'package:carzz/app/modules/splashscreen/views/splashscreen_view.dart';
 import 'package:carzz/app/modules/view_all/bindings/view_all_binding.dart';
@@ -62,15 +64,20 @@ class AppPages {
       page: () => FullScreenView(),
       binding: FullScreenBinding(),
     ),
-    // GetPage(
-    //   name: _Paths.LOGINPAGE,
-    //   page: () => LoginpageView(),
-    //   binding: LoginpageBinding(),
-    // ),
+    GetPage(
+      name: _Paths.LOGINPAGE,
+      page: () => LoginpageView(),
+      binding: LoginpageBinding(),
+    ),
     GetPage(
       name: _Paths.SPLASHSCREEN,
       page: () => SplashscreenView(),
       binding: SplashscreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGNUP,
+      page: () => SignupView(),
+      binding: SignupBinding(),
     ),
   ];
 }
