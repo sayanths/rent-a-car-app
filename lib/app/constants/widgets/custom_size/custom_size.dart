@@ -1,4 +1,5 @@
 import 'package:carzz/app/modules/full_screen/views/full_screen_view.dart';
+import 'package:carzz/app/modules/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,14 +20,16 @@ const width15 = SizedBox(
 );
 
 class CustomGlassContainer extends StatelessWidget {
+  final CartLisr data;
   const CustomGlassContainer({
     Key? key,
+    required this.data,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.to(()=>FullScreenView()),
+      onTap: () => Get.to(() => FullScreenView()),
       child: Column(
         children: [
           Container(
@@ -50,10 +53,11 @@ class CustomGlassContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.network(
-                  "https://www.pngall.com/wp-content/uploads/5/Lamborghini-Aventador-PNG-File-Download-Free.png",
+                  data.image,
+                  fit: BoxFit.cover,
                 ),
                 Text(
-                  "Lamporgini Aventure",
+                  (data.name),
                   style:
                       gfontsubtitlefont(cl: white, fw: FontWeight.bold, sz: 17),
                 ),
@@ -66,11 +70,11 @@ class CustomGlassContainer extends StatelessWidget {
   }
 }
 
-
 class HeadingsInNavBarScreen extends StatelessWidget {
   final String title;
   const HeadingsInNavBarScreen({
-    Key? key, required this.title,
+    Key? key,
+    required this.title,
   }) : super(key: key);
 
   @override

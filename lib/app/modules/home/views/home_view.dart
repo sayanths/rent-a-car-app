@@ -5,6 +5,8 @@ import 'package:carzz/app/modules/home/views/widget/widget.dart';
 import 'package:carzz/app/modules/view_all/views/view_all_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:iconify_flutter/icons/carbon.dart';
 import '../controllers/home_controller.dart';
 import 'widget/search.dart';
 
@@ -29,7 +31,23 @@ class HomeView extends GetView<HomeController> {
         child: ListView(
           children: [
             Search(size: size),
-            height30,
+            height10,
+            height10,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                children: [
+                  Iconify(
+                    Carbon.location_current,
+                    color: white,
+                  ),
+                  Text(
+                    "Kannur,Kerala,India",
+                    style: Lato(cl: white),
+                  ),
+                ],
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Text(
@@ -42,9 +60,10 @@ class HomeView extends GetView<HomeController> {
               child: ListView.builder(
                 physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: 10,
+                itemCount: lateestCarList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return CustomGlassContainer();
+                  final data = lateestCarList[index];
+                  return CustomGlassContainer(data: data);
                 },
               ),
             ),
@@ -73,11 +92,12 @@ class HomeView extends GetView<HomeController> {
             LimitedBox(
               maxHeight: 100,
               child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: logos.length,
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
-                    return CustomBrandLogo();
+                    final data = logos[index];
+                    return CustomBrandLogo(data: data);
                   }),
             ),
             Padding(
@@ -91,7 +111,7 @@ class HomeView extends GetView<HomeController> {
             LimitedBox(
               maxHeight: 200,
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   return AvailableCarsContainer(size: size);
                 },
@@ -103,3 +123,32 @@ class HomeView extends GetView<HomeController> {
     );
   }
 }
+
+final lateestCarList = [
+  CartLisr(
+      image:
+          "https://www.kindpng.com/picc/m/423-4235121_car-vector-hd-of-worldwide-car-design-audi.png",
+      name: "Porche"),
+  CartLisr(
+      image:
+          "https://www.kindpng.com/picc/m/333-3333962_background-audi-png-auto-car-images-download-wallpaper.png",
+      name: "Lamborgini"),
+  CartLisr(
+      image:
+          "https://www.kindpng.com/picc/m/142-1429633_land-design-bumper-motor-vehicle-sport-utility-vehicle.png",
+      name: "Auodi")
+];
+
+class CartLisr {
+  String image;
+  String name;
+  CartLisr({required this.image, required this.name});
+}
+
+final logos = [
+  "https://www.freepnglogos.com/uploads/mini-cooper-car-logo-brands-png-images-26.png",
+  "https://www.freepnglogos.com/uploads/skoda-car-logo-png-brand-image-32.png",
+  "https://www.freepnglogos.com/uploads/kia-car-logo-png-brand-image-33.png",
+  "https://www.freepnglogos.com/uploads/cars-logo-brands-png-images-30.png",
+  "https://www.freepnglogos.com/uploads/car-logo-volkswagen-transparent-png-27.png",
+];

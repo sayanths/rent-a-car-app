@@ -103,8 +103,10 @@ class AvailableCarsContainer extends StatelessWidget {
 }
 
 class CustomBrandLogo extends StatelessWidget {
+  final String data;
   const CustomBrandLogo({
     Key? key,
+    required this.data,
   }) : super(key: key);
 
   @override
@@ -122,7 +124,7 @@ class CustomBrandLogo extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.network(
-              "https://www.freepnglogos.com/uploads/kia-car-logo-png-brand-image-33.png",
+              data,
             ),
           ),
         ),
@@ -130,26 +132,3 @@ class CustomBrandLogo extends StatelessWidget {
     );
   }
 }
-
-// class Location extends StatelessWidget {
-//   const Location({
-//     Key? key,
-//   }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       children: [
-//         Icon(
-//           Icons.location_pin,
-//           color: white,
-//         ),
-//         Location(),
-//         Text(
-//           "Kannur , kerala,India",
-//           style: Lato(cl: white, sz: 15),
-//         )
-//       ],
-//     );
-//   }
-// }
