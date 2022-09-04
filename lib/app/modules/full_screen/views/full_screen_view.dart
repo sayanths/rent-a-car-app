@@ -42,9 +42,6 @@ class FullScreenView extends GetView<FullScreenController> {
                 Image.network(
                     "https://www.supercars.net/blog/wp-content/uploads/2022/01/lamborghini-aventador-lp-780-4-ultimae.jpg"),
                 height30,
-                Row(
-                  children: [],
-                ),
                 Text(
                   "Details",
                   style:
@@ -65,7 +62,13 @@ class FullScreenView extends GetView<FullScreenController> {
           height: size.height / 5,
           width: size.width,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 20, 1, 37),
+            gradient: LinearGradient(
+              colors: [
+                bgColor1,
+                bgColor2,
+                bgColor1,
+              ],
+            ),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(50),
               topRight: Radius.circular(50),
