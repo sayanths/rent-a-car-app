@@ -12,12 +12,13 @@ class SplashscreenController extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    Timer(Duration(milliseconds: 7000), () {
-      a = !a;
-      update();
-    });
+    // Timer(Duration(milliseconds: 7000), () {
+    //   a = !a;
+    //   update();
+    // });
     Timer(Duration(milliseconds: 2000), () {
       Get.offAll(() => LoginpageView());
+      update();
     });
   }
 
