@@ -1,6 +1,7 @@
 import 'package:carzz/app/constants/colors/colors.dart';
 import 'package:carzz/app/constants/fonts/fonts.dart';
 import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
+import 'package:carzz/app/modules/forgotpassword/views/forgotpassword_view.dart';
 import 'package:carzz/app/modules/home/views/widget/bg_color.dart';
 import 'package:carzz/app/modules/signup/views/signup_view.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +76,7 @@ class LoginpageView extends GetView<LoginpageController> {
                               style: gfontsubtitlefont(cl: white),
                             ),
                             InkWell(
-                                onTap: () => Get.to(() => SignupView()),
+                                onTap: () => Get.to(() => ForgotpasswordView()),
                                 child: Text(
                                   " Click here",
                                   style: gfontsubtitlefont(
