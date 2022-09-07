@@ -86,31 +86,8 @@ class ViewAllView extends GetView<ViewAllController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ChoiceChipWidget(
-                  colors: blue,
-                  function: () {},
-                  title: "Luxury",
-                ),
-                ChoiceChipWidget(
-                  colors: white,
-                  function: () {},
-                  title: "Sedan",
-                ),
-                ChoiceChipWidget(
-                  colors: white,
-                  function: () {},
-                  title: "Vintage",
-                ),
-                ChoiceChipWidget(
-                  colors: white,
-                  function: () {},
-                  title: "Custom",
-                ),
-                ChoiceChipWidget(
-                  colors: white,
-                  function: () {},
-                  title: "Hatback",
-                ),
+                ChoiceChipWidget(),
+              
               ],
             ),
             height10,
@@ -140,4 +117,3 @@ final list = [
   'https://img.etimg.com/photo/msid-81432986,imgsize-387481/BMWEmbed1.jpg',
   'http://www.blog.sagmart.com/wp-content/uploads/2014/10/91449abd-0eca-448b-94c2-aff487fda545.jpg',
 ];
-

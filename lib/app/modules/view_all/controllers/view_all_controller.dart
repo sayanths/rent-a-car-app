@@ -1,20 +1,17 @@
 import 'package:get/get.dart';
 
 class ViewAllController extends GetxController {
-  //TODO: Implement ViewAllController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  bool newValue =false;
+  int defaultChoicIndex = 0;
+  List<String> choiceList = [
+    ' Luxury',
+    'Sedan',
+    'Vintage',
+    'Hatback',
+  ];
+  void choicChi(bool value) {
+    this.newValue = value;
+    update();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  
 }

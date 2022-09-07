@@ -61,7 +61,7 @@ class LoginpageView extends GetView<LoginpageController> {
                           width: size.width / 2,
                           child: ElevatedButton(
                             onPressed: () {
-                              Get.offAll(() => BottomnavbarView());
+                              Get.off(() => BottomnavbarView());
                             },
                             child: Text("Log in"),
                             style: ElevatedButton.styleFrom(
