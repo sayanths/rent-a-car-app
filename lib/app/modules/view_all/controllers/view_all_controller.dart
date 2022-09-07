@@ -1,7 +1,12 @@
 import 'package:carzz/app/modules/favourite/views/favourite_view.dart';
 import 'package:carzz/app/modules/home/views/home_view.dart';
+import 'package:carzz/app/modules/view_all/views/widgets/Vintage.dart';
+import 'package:carzz/app/modules/view_all/views/widgets/xuv_type.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
+import '../views/widgets/grid_view_all.dart';
+import '../views/widgets/sedan_type.dart';
 
 class ViewAllController extends GetxController {
   bool newValue = false;
@@ -10,13 +15,13 @@ class ViewAllController extends GetxController {
     'Luxury',
     'Sedan',
     'Vintage',
-    'Hatback',
+    'Xuv Type',
   ];
   List<Widget> choiceListWidget = [
-    FavouriteView(),
-    HomeView(),
-    FavouriteView(),
-    HomeView(),
+    ViewAllGridView(),
+    SedanType(),
+    VintageCars(),
+    XuvType(),
     
   ];
   void choicChi(bool value, int index) {

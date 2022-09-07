@@ -107,6 +107,12 @@ class ViewAllView extends GetView<ViewAllController> {
                     });
               }),
             ),
+         height10,
+            // Container(
+            //   height: 300,
+            //   width: size.width / 1.2,
+            //   color: white,
+            // ),
           ],
         ),
       ),
