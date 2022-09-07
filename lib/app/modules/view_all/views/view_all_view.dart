@@ -10,9 +10,9 @@ import '../controllers/view_all_controller.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 
 import 'widgets/choice_chip.dart';
-import 'widgets/grid_view_all.dart';
 
 class ViewAllView extends GetView<ViewAllController> {
+  final news = Get.put(ViewAllController());
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -87,23 +87,25 @@ class ViewAllView extends GetView<ViewAllController> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ChoiceChipWidget(),
-              
               ],
             ),
             height10,
             LimitedBox(
               maxHeight: 450,
-              child: GridView.builder(
-                  padding: EdgeInsets.all(10),
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 200,
-                      childAspectRatio: 3 / 3,
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20),
-                  itemCount: 10,
-                  itemBuilder: (BuildContext ctx, index) {
-                    return ViewAllGridView();
-                  }),
+              child: GetBuilder<ViewAllController>(builder: (obj) {
+                return GridView.builder(
+                    padding: EdgeInsets.all(10),
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 200,
+                            childAspectRatio: 3 / 3,
+                            crossAxisSpacing: 20,
+                            mainAxisSpacing: 20),
+                    itemCount: 10,
+                    itemBuilder: (BuildContext ctx, index) {
+                      return obj.choiceListWidget[obj.defaultChoicIndex];
+                    });
+              }),
             ),
           ],
         ),

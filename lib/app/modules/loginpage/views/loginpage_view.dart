@@ -94,7 +94,7 @@ class LoginpageView extends GetView<LoginpageController> {
                               style: gfontsubtitlefont(cl: white),
                             ),
                             InkWell(
-                                onTap: () => Get.to(() => SignupView()),
+                                onTap: () => Get.to(() => SignupView(),transition: Transition.upToDown),
                                 child: Text(
                                   " Click here",
                                   style: gfontsubtitlefont(
