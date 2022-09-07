@@ -19,7 +19,7 @@ class ViewAllGridView extends StatelessWidget {
             color: Colors.white10,
             image: DecorationImage(
               image: NetworkImage(
-                "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/models_gw/images-s/S2_502326_M.jpg",
+                "https://etimg.etb2bimg.com/photo/76543014.cms",
               ),
               fit: BoxFit.cover,
             ),
@@ -45,17 +45,19 @@ class ViewAllGridView extends StatelessWidget {
                   children: [
                     Container(
                       height: 40,
-                      width: size.width / 2,
+                      width: size.width / 2.2,
                       decoration: BoxDecoration(
-                        color: black,
+                        color: white,
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(15),
                             bottomRight: Radius.circular(15)),
                       ),
-                      child: Text(
-                        "Benz",
-                        style: gfontsubtitlefont(cl: white, sz: 20),
-                        textAlign: TextAlign.center,
+                      child: Center(
+                        child: Text(
+                          "Benz",
+                         style: gfontsubtitlefont(
+                                cl: black, sz: 20, fw: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ],

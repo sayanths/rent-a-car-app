@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../../constants/colors/colors.dart';
 import '../../../../constants/fonts/fonts.dart';
 
-class SedanType extends StatelessWidget {
-  const SedanType({
+class XuvType extends StatelessWidget {
+  const XuvType({
     Key? key,
   }) : super(key: key);
 
@@ -19,7 +19,7 @@ class SedanType extends StatelessWidget {
             color: Colors.white10,
             image: DecorationImage(
               image: NetworkImage(
-                "https://cdn.justluxe.com/classifieds/75078.jpg?comp=2",
+                "https://autopediame.com/storage/images/Changan/cs85%201.jpg",
               ),
               fit: BoxFit.cover,
             ),
@@ -47,17 +47,16 @@ class SedanType extends StatelessWidget {
                       height: 40,
                       width: size.width / 2.2,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: white,
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(15),
                             bottomRight: Radius.circular(15)),
                       ),
                       child: Center(
                         child: Text(
-                          "Honda City",
-                          style: gfontsubtitlefont(
-                              cl: black, sz: 20, fw: FontWeight.bold),
-                          textAlign: TextAlign.center,
+                          "Toyota SUVs",
+                         style: gfontsubtitlefont(
+                                cl: black, sz: 20, fw: FontWeight.bold),
                         ),
                       ),
                     ),
