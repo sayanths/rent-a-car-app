@@ -69,8 +69,8 @@ class _MyCustomSplashScreenState extends State<MyCustomSplashScreen>
 
     return Scaffold(
       backgroundColor: black,
-      body: customContainer(
-        Stack(
+      body: CustomContainer(
+        child:Stack(
           children: [
             Column(
               children: [

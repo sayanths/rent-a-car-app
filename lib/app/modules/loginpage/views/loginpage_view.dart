@@ -7,6 +7,7 @@ import 'package:carzz/app/modules/loginpage/views/forgotpassword_view.dart';
 import 'package:carzz/app/modules/signup/views/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../email_login/views/email_login_view.dart';
 import '../controllers/loginpage_controller.dart';
 import 'forgotpassword_view.dart';
 import 'widgets/textfield.dart';
@@ -18,8 +19,8 @@ class LoginpageView extends GetView<LoginpageController> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: black,
-      body: customContainer(
-        SafeArea(
+      body: CustomContainer(
+       child: SafeArea(
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -106,12 +107,27 @@ class LoginpageView extends GetView<LoginpageController> {
                           ],
                         ),
                         height30,
-                        InkWell(
-                          onTap: () {},
-                          child: Image.network(
-                            "https://res.cloudinary.com/sayanth/image/upload/v1662220924/zara%27s%20shopping%20app/zara%20shopping/google_vnwqmg.png",
-                            height: 50,
-                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: Image.network(
+                                "https://res.cloudinary.com/sayanth/image/upload/v1662220924/zara%27s%20shopping%20app/zara%20shopping/google_vnwqmg.png",
+                                height: 50,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Get.to(() => EmailLoginView());
+                              },
+                              child: Image.network(
+                                "https://res.cloudinary.com/sayanth/image/upload/v1663147673/email_ekjr0w.png",
+                                height: 55,
+                                color: white,
+                              ),
+                            ),
+                          ],
                         )
                       ],
                     ),

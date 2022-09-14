@@ -1,8 +1,9 @@
-import 'package:carzz/app/modules/loginpage/views/forgotpassword_view.dart';
 import 'package:get/get.dart';
 
 import 'package:carzz/app/modules/bottomnavbar/bindings/bottomnavbar_binding.dart';
 import 'package:carzz/app/modules/bottomnavbar/views/bottomnavbar_view.dart';
+import 'package:carzz/app/modules/email_login/bindings/email_login_binding.dart';
+import 'package:carzz/app/modules/email_login/views/email_login_view.dart';
 import 'package:carzz/app/modules/favourite/bindings/favourite_binding.dart';
 import 'package:carzz/app/modules/favourite/views/favourite_view.dart';
 import 'package:carzz/app/modules/full_screen/bindings/full_screen_binding.dart';
@@ -10,6 +11,7 @@ import 'package:carzz/app/modules/full_screen/views/full_screen_view.dart';
 import 'package:carzz/app/modules/home/bindings/home_binding.dart';
 import 'package:carzz/app/modules/home/views/home_view.dart';
 import 'package:carzz/app/modules/loginpage/bindings/loginpage_binding.dart';
+import 'package:carzz/app/modules/loginpage/views/forgotpassword_view.dart';
 import 'package:carzz/app/modules/loginpage/views/loginpage_view.dart';
 import 'package:carzz/app/modules/notifications/bindings/notifications_binding.dart';
 import 'package:carzz/app/modules/notifications/views/notifications_view.dart';
@@ -85,5 +87,10 @@ class AppPages {
     //   page: () => ForgotpasswordView(),
     //   binding: ForgotpasswordBinding(),
     // ),
+    GetPage(
+      name: _Paths.EMAIL_LOGIN,
+      page: () => EmailLoginView(),
+      binding: EmailLoginBinding(),
+    ),
   ];
 }

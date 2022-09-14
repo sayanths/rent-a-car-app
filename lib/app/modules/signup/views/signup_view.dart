@@ -19,8 +19,8 @@ class SignupView extends GetView<SignupController> {
     return Scaffold(
       backgroundColor: black,
       body: SafeArea(
-        child: customContainer(
-          SingleChildScrollView(
+        child: CustomContainer(
+          child:SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
               children: [

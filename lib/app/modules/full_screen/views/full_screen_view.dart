@@ -18,8 +18,8 @@ class FullScreenView extends GetView<FullScreenController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: black,
-        body: customContainer(
-          SingleChildScrollView(
+        body: CustomContainer(
+         child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
