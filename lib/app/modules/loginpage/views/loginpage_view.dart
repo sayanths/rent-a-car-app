@@ -14,6 +14,7 @@ import 'widgets/textfield.dart';
 class LoginpageView extends GetView<LoginpageController> {
   @override
   Widget build(BuildContext context) {
+    final loginController = Get.put(LoginpageController());
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: black,
@@ -51,10 +52,11 @@ class LoginpageView extends GetView<LoginpageController> {
                             )),
                         height30,
                         CustomTextField(
+                          controller: loginController.loginNumberController,
                           keyboard: TextInputType.number,
                           size: size,
                           icon: Icons.phone,
-                          title: 'Please enter number',
+                          title: '   Please enter number',
                         ),
                         height30,
                         SizedBox(
@@ -94,7 +96,8 @@ class LoginpageView extends GetView<LoginpageController> {
                               style: gfontsubtitlefont(cl: white),
                             ),
                             InkWell(
-                                onTap: () => Get.to(() => SignupView(),transition: Transition.upToDown),
+                                onTap: () => Get.to(() => SignupView(),
+                                    transition: Transition.upToDown),
                                 child: Text(
                                   " Click here",
                                   style: gfontsubtitlefont(

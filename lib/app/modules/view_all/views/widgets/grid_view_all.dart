@@ -14,7 +14,7 @@ class ViewAllGridView extends StatelessWidget {
       children: [
         Container(
           height: size.height / 3.6,
-          width: size.width / 2,
+          width: size.width / 2.2,
           decoration: BoxDecoration(
             color: Colors.white10,
             image: DecorationImage(
