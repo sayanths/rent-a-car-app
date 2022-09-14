@@ -7,12 +7,14 @@ class CustomTextField extends StatelessWidget {
   final TextInputType keyboard;
   final IconData icon;
   final String title;
+  final TextEditingController controller;
   const CustomTextField({
     Key? key,
     required this.size,
     required this.icon,
     required this.title,
     required this.keyboard,
+    required this.controller,
   }) : super(key: key);
 
   final Size size;
@@ -44,6 +46,7 @@ class CustomTextField extends StatelessWidget {
               ),
               child: Form(
                 child: TextField(
+                  controller: controller,
                   keyboardType: keyboard,
                   decoration: InputDecoration(
                     hintText: title,

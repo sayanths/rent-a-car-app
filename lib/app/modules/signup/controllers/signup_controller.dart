@@ -1,20 +1,21 @@
-import 'package:get/get.dart';
+import 'dart:convert';
+
+import 'package:carzz/app/data/signup_model.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:http/http.dart' as http;
 
 class SignupController extends GetxController {
-  //TODO: Implement SignupController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  SignupController() {
+    // putUser(requestModel);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final numberController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confromPasswordController = TextEditingController();
 
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  String baseUrl = 'http://localhost:3000/account/signup';
+  
 }

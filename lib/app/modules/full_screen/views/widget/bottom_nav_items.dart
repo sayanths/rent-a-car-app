@@ -37,33 +37,67 @@ class FullViewCallAndChat extends StatelessWidget {
     );
   }
 }
+
 class FullScreenDetails extends StatelessWidget {
   final String title;
   final String icon;
+  final String? policyUrl;
+  final Color policyColor;
+
   const FullScreenDetails({
     Key? key,
     required this.title,
     required this.icon,
+    this.policyUrl, required this.policyColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Iconify(
-              icon,
-              color: white,
-            ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Iconify(
+                  icon,
+                  color: white,
+                ),
+              ),
+              Text(
+                title,
+                style: gfontsubtitlefont(cl: white),
+              ),
+            ],
           ),
           Text(
-            title,
-            style: gfontsubtitlefont(cl: white),
+            policyUrl ?? "",
+            style: gfontsubtitlefont(cl: policyColor),
           ),
         ],
+      ),
+    );
+  }
+}
+
+
+class FullScreenMainHeading extends StatelessWidget {
+  final String title;
+  const FullScreenMainHeading({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        title,
+        style: gfontsubtitlefont(cl: white, sz: 25, fw: FontWeight.bold),
       ),
     );
   }
