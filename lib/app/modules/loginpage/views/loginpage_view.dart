@@ -4,6 +4,7 @@ import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
 import 'package:carzz/app/modules/home/views/widget/bg_color.dart';
 import 'package:carzz/app/modules/loginpage/views/forgotpassword_view.dart';
 import 'package:carzz/app/modules/signup/views/signup_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/loginpage_controller.dart';
@@ -61,7 +62,7 @@ class LoginpageView extends GetView<LoginpageController> {
                               if (value!.isEmpty) {
                                 return 'Please enter valid email';
                               } else if (value.length <= 9) {
-                                return 'please enter correct number';
+                                return 'please enter correct email';
                               }
                               return null;
                             },
@@ -71,8 +72,9 @@ class LoginpageView extends GetView<LoginpageController> {
                             icon: Icons.phone,
                             title: '  enter email',
                           ),
-                         
-                         SizedBox(height: size.height/25,),
+                          SizedBox(
+                            height: size.height / 25,
+                          ),
                           CustomTextField(
                             obsureText: true,
                             validate: (value) {
@@ -87,13 +89,18 @@ class LoginpageView extends GetView<LoginpageController> {
                             icon: Icons.password,
                             title: '  enter password',
                           ),
-                         SizedBox(height: size.height/25,),
+                          SizedBox(
+                            height: size.height / 25,
+                          ),
                           SizedBox(
                             width: size.width / 2,
-                            child: ElevatedButton(
+                            child: loginController.isLoadig
+                            
+                            ?CupertinoActivityIndicator(color: white,radius: 20,)
+                            : ElevatedButton(
                               onPressed: () {
                                 loginController.onLoginButtonPress();
-                                //    Get.off(() => BottomnavbarView());
+                               // loginController.loginApi();
                               },
                               child: Text("Log in"),
                               style: ElevatedButton.styleFrom(
