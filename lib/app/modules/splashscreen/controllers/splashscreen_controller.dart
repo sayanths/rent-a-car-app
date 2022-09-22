@@ -8,6 +8,14 @@ class SplashscreenController extends GetxController {
   bool a = false;
   late Widget page;
 
+    double fontSize = 2;
+  double containerSize = 1.5;
+  double textOpacity = 0.0;
+  double containerOpacity = 0.0;
+
+  late AnimationController _controller;
+  late Animation<double> animation1;
+
   @override
   void onInit() {
     // TODO: implement onInit

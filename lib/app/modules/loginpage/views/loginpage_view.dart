@@ -1,7 +1,6 @@
 import 'package:carzz/app/constants/colors/colors.dart';
 import 'package:carzz/app/constants/fonts/fonts.dart';
 import 'package:carzz/app/constants/widgets/custom_size/custom_size.dart';
-import 'package:carzz/app/modules/bottomnavbar/views/bottomnavbar_view.dart';
 import 'package:carzz/app/modules/home/views/widget/bg_color.dart';
 import 'package:carzz/app/modules/loginpage/views/forgotpassword_view.dart';
 import 'package:carzz/app/modules/signup/views/signup_view.dart';
@@ -25,7 +24,9 @@ class LoginpageView extends GetView<LoginpageController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                height50,
+                SizedBox(
+                  height: size.height / 23,
+                ),
                 Text(
                   "Welcome",
                   style: gfontsubtitlefont(cl: white, sz: 40),
@@ -40,80 +41,123 @@ class LoginpageView extends GetView<LoginpageController> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
-                    child: Column(
-                      children: [
-                        height50,
-                        Align(
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "     Mobile Number",
-                              style: gfontsubtitlefont(cl: white, sz: 22),
-                            )),
-                        height30,
-                        CustomTextField(
-                          controller: loginController.loginNumberController,
-                          keyboard: TextInputType.number,
-                          size: size,
-                          icon: Icons.phone,
-                          title: '   Please enter number',
-                        ),
-                        height30,
-                        SizedBox(
-                          width: size.width / 2,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Get.off(() => BottomnavbarView());
+                      horizontal: 20,
+                    ),
+                    child: Form(
+                      key: loginController.loginKey,
+                      child: Column(
+                        children: [
+                          height50,
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                "Login now",
+                                style: gfontsubtitlefont(cl: white, sz: 22),
+                              )),
+                          height10,
+                          CustomTextField(
+                            obsureText: false,
+                            validate: (value) {
+                              if (value!.isEmpty) {
+                                return 'Please enter valid email';
+                              } else if (value.length <= 9) {
+                                return 'please enter correct number';
+                              }
+                              return null;
                             },
-                            child: Text("Log in"),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 0, 20, 238),
-                              shape: StadiumBorder(),
+                            controller: loginController.emailController,
+                            keyboard: TextInputType.emailAddress,
+                            size: size,
+                            icon: Icons.phone,
+                            title: '  enter email',
+                          ),
+                         
+                         SizedBox(height: size.height/25,),
+                          CustomTextField(
+                            obsureText: true,
+                            validate: (value) {
+                              if (value!.isEmpty) {
+                                return 'Please enter valid password';
+                              }
+                              return null;
+                            },
+                            controller: loginController.passwordController,
+                            keyboard: TextInputType.number,
+                            size: size,
+                            icon: Icons.password,
+                            title: '  enter password',
+                          ),
+                         SizedBox(height: size.height/25,),
+                          SizedBox(
+                            width: size.width / 2,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                loginController.onLoginButtonPress();
+                                //    Get.off(() => BottomnavbarView());
+                              },
+                              child: Text("Log in"),
+                              style: ElevatedButton.styleFrom(
+                                primary: Color.fromARGB(255, 0, 20, 238),
+                                shape: StadiumBorder(),
+                              ),
                             ),
                           ),
-                        ),
-                        height10,
-                        Row(
-                          children: [
-                            Text(
-                              "Forgot password? ",
-                              style: gfontsubtitlefont(cl: white),
-                            ),
-                            InkWell(
-                                onTap: () => Get.to(() => ForgotpasswordView()),
-                                child: Text(
-                                  " Click here",
-                                  style: gfontsubtitlefont(
-                                      cl: Color.fromARGB(255, 0, 255, 255)),
-                                )),
-                          ],
-                        ),
-                        height10,
-                        Row(
-                          children: [
-                            Text(
-                              "Don't have an account? ",
-                              style: gfontsubtitlefont(cl: white),
-                            ),
-                            InkWell(
-                                onTap: () => Get.to(() => SignupView(),
-                                    transition: Transition.upToDown),
-                                child: Text(
-                                  " Click here",
-                                  style: gfontsubtitlefont(
-                                      cl: Color.fromARGB(255, 0, 255, 255)),
-                                )),
-                          ],
-                        ),
-                        height30,
-                        InkWell(
-                          onTap: () {},
-                          child: Image.network(
-                            "https://res.cloudinary.com/sayanth/image/upload/v1662220924/zara%27s%20shopping%20app/zara%20shopping/google_vnwqmg.png",
-                            height: 50,
+                          height10,
+                          Row(
+                            children: [
+                              Text(
+                                "Forgot password ? ",
+                                style: gfontsubtitlefont(cl: white),
+                              ),
+                              InkWell(
+                                  onTap: () =>
+                                      Get.to(() => ForgotpasswordView()),
+                                  child: Text(
+                                    " Click here",
+                                    style: gfontsubtitlefont(
+                                        cl: Color.fromARGB(255, 0, 255, 255)),
+                                  )),
+                            ],
                           ),
-                        )
-                      ],
+                          height10,
+                          Row(
+                            children: [
+                              Text(
+                                "Don't have an account ? ",
+                                style: gfontsubtitlefont(cl: white),
+                              ),
+                              InkWell(
+                                  onTap: () => Get.to(() => SignupView(),
+                                      transition: Transition.upToDown),
+                                  child: Text(
+                                    " Click here",
+                                    style: gfontsubtitlefont(
+                                        cl: Color.fromARGB(255, 0, 255, 255)),
+                                  )),
+                            ],
+                          ),
+                          height30,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: Image.network(
+                                  "https://res.cloudinary.com/sayanth/image/upload/v1662220924/zara%27s%20shopping%20app/zara%20shopping/google_vnwqmg.png",
+                                  height: 50,
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {},
+                                child: Image.network(
+                                  "https://res.cloudinary.com/sayanth/image/upload/v1662220924/zara%27s%20shopping%20app/zara%20shopping/google_vnwqmg.png",
+                                  height: 50,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

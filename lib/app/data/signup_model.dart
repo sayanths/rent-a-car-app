@@ -1,24 +1,45 @@
-class SignUpClassModel {
-  SignUpClassModel({
-    required this.userName,
-    required this.userMail,
+class SignInClassModel {
+  String useremail;
+  String userPassword;
+  SignInClassModel({
+    required this.useremail,
     required this.userPassword,
   });
 
-  String userName;
-  String userMail;
-  String userPassword;
-
-  factory SignUpClassModel.fromJson(Map<String, dynamic> json) =>
-      SignUpClassModel(
-        userName: json["user_name"],
-        userMail: json["user_mail"],
-        userPassword: json["user_password"],
-      );
+  // factory SignInClassModel.fromJson(Map<String, dynamic> json) =>
+  //     SignInClassModel(
+  //       useremail: json["user_mail"],
+  //       userPassword: json["user_password"],
+  //     );
 
   Map<String, dynamic> toJson() => {
-        "user_name": userName,
-        "user_mail": userMail,
+        "user_mail": useremail,
         "user_password": userPassword,
       };
+}
+
+class SignInResponse {
+  bool status;
+  String message;
+  String token;
+
+  SignInResponse({
+    required this.message,
+    required this.status,
+    required this.token,
+  });
+
+  factory SignInResponse.fromJson(Map<String, dynamic> json) {
+    return SignInResponse(
+      message: json['message'],
+      status: json['status'],
+      token: json['token'],
+    );
+  }
+
+  // Map<String, dynamic> toJson() => {
+  //       "message": message,
+  //       "status": status,
+  //       "token": token,
+  //     };
 }

@@ -8,13 +8,16 @@ class CustomTextField extends StatelessWidget {
   final IconData icon;
   final String title;
   final TextEditingController controller;
+  final String? Function(String?)? validate;
+  final bool obsureText;
   const CustomTextField({
     Key? key,
     required this.size,
     required this.icon,
     required this.title,
     required this.keyboard,
-    required this.controller,
+    required this.controller, 
+    this.validate, required this.obsureText,
   }) : super(key: key);
 
   final Size size;
@@ -44,13 +47,19 @@ class CustomTextField extends StatelessWidget {
                   bottomRight: Radius.circular(10),
                 ),
               ),
-              child: Form(
-                child: TextField(
-                  controller: controller,
-                  keyboardType: keyboard,
-                  decoration: InputDecoration(
-                    hintText: title,
-                    border: InputBorder.none,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: TextFormField(
+                  obscureText: obsureText,
+                    validator:validate ,
+                    controller: controller,
+                    keyboardType: keyboard,
+                    decoration: InputDecoration(
+                      
+                      hintText: title,
+                      border: InputBorder.none,
+                    ),
                   ),
                 ),
               ),
