@@ -94,10 +94,7 @@ class LoginpageView extends GetView<LoginpageController> {
                           ),
                           SizedBox(
                             width: size.width / 2,
-                            child: loginController.isLoadig
-                            
-                            ?CupertinoActivityIndicator(color: white,radius: 20,)
-                            : ElevatedButton(
+                            child: ElevatedButton(
                               onPressed: () {
                                 loginController.onLoginButtonPress();
                                // loginController.loginApi();
@@ -108,6 +105,10 @@ class LoginpageView extends GetView<LoginpageController> {
                                 shape: StadiumBorder(),
                               ),
                             ),
+                            //loginController.isLoadig
+                            
+                            // ?CupertinoActivityIndicator(color: white,radius: 20,)
+                            // : 
                           ),
                           height10,
                           Row(

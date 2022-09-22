@@ -35,7 +35,7 @@ class LoginpageController extends GetxController {
   }
 
   hideIsloading() {
-    isLoadig = false;
+    isLoadig = true;
     update();
   }
 

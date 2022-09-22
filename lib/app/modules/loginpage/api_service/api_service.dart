@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:html';
 import 'dart:io';
 import 'package:carzz/app/constants/base_url/base_url.dart';
 import 'package:carzz/app/modules/loginpage/model/login_model.dart';
@@ -11,9 +12,7 @@ class Api {
   Future<LoginResponse?> loginUser(LoginModel model) async {
     try {
       // await check internet is offline or online
-      final response = await dio.post(
-          "http://10.0.2.2:3000/account/login-email",
-          data: model.toJson());
+      final response = await dio.post(BaseUrl.login, data: model.toJson());
       if (response.statusCode == 200) {
         log(response.toString());
         return LoginResponse.fromJson(response.data);
@@ -22,7 +21,6 @@ class Api {
       }
     } on SocketException catch (e) {
       debugPrint(e.toString());
-      
     } catch (e) {
       log(e.toString());
       // if (e is DioError) {
@@ -31,6 +29,6 @@ class Api {
       //   }
       // }
     }
-    
+    return null;
   }
 }
