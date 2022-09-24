@@ -18,8 +18,8 @@ class ViewAllView extends GetView<ViewAllController> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: black,
-      body: customContainer(
-        ListView(
+      body: CustomContainer(
+       child: ListView(
           children: [
             height10,
 

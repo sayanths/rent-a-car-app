@@ -15,6 +15,8 @@ import 'package:carzz/app/modules/loginpage/views/forgotpassword_view.dart';
 import 'package:carzz/app/modules/loginpage/views/loginpage_view.dart';
 import 'package:carzz/app/modules/notifications/bindings/notifications_binding.dart';
 import 'package:carzz/app/modules/notifications/views/notifications_view.dart';
+import 'package:carzz/app/modules/phonelogin/bindings/phonelogin_binding.dart';
+import 'package:carzz/app/modules/phonelogin/views/phonelogin_view.dart';
 import 'package:carzz/app/modules/profileview/bindings/profileview_binding.dart';
 import 'package:carzz/app/modules/profileview/views/profileview_view.dart';
 import 'package:carzz/app/modules/signup/bindings/signup_binding.dart';
@@ -67,11 +69,11 @@ class AppPages {
       page: () => FullScreenView(),
       binding: FullScreenBinding(),
     ),
-    GetPage(
-      name: _Paths.LOGINPAGE,
-      page: () => LoginpageView(),
-      binding: LoginpageBinding(),
-    ),
+    // GetPage(
+    //   name: _Paths.LOGINPAGE,
+    //   page: () => LoginpageView(),
+    //   binding: LoginpageBinding(),
+    // ),
     GetPage(
       name: _Paths.SPLASHSCREEN,
       page: () => MyCustomSplashScreen(),
@@ -92,5 +94,10 @@ class AppPages {
       page: () => EmailLoginView(),
       binding: EmailLoginBinding(),
     ),
+    // GetPage(
+    //   name: _Paths.PHONELOGIN,
+    //   page: () => PhoneloginView(),
+    //   binding: PhoneloginBinding(),
+    // ),
   ];
 }

@@ -16,6 +16,7 @@ abstract class Routes {
   static const SIGNUP = _Paths.SIGNUP;
   static const FORGOTPASSWORD = _Paths.FORGOTPASSWORD;
   static const EMAIL_LOGIN = _Paths.EMAIL_LOGIN;
+  static const PHONELOGIN = _Paths.PHONELOGIN;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const SIGNUP = '/signup';
   static const FORGOTPASSWORD = '/forgotpassword';
   static const EMAIL_LOGIN = '/email-login';
+  static const PHONELOGIN = '/phonelogin';
 }

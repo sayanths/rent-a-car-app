@@ -15,7 +15,7 @@ class CustomLoginContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height / 13,
+       height: size.height / 11,
       width: size.width / 1.5,
       decoration: BoxDecoration(
         color: black,
