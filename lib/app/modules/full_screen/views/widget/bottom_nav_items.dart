@@ -48,7 +48,8 @@ class FullScreenDetails extends StatelessWidget {
     Key? key,
     required this.title,
     required this.icon,
-    this.policyUrl, required this.policyColor,
+    this.policyUrl,
+    required this.policyColor,
   }) : super(key: key);
 
   @override
@@ -82,7 +83,6 @@ class FullScreenDetails extends StatelessWidget {
     );
   }
 }
-
 
 class FullScreenMainHeading extends StatelessWidget {
   final String title;

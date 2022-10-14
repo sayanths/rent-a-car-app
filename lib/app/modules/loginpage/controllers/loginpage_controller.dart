@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:carzz/app/constants/colors/colors.dart';
+import 'package:carzz/app/modules/bottomnavbar/views/bottomnavbar_view.dart';
 import 'package:carzz/app/modules/home/views/home_view.dart';
 import 'package:carzz/app/modules/loginpage/api_service/api_service.dart';
 import 'package:carzz/app/modules/loginpage/model/login_model.dart';
@@ -32,7 +33,7 @@ class LoginpageController extends GetxController {
       hideIsloading();
       log(response.token.toString());
       if (response.status!) {
-        Get.offAll(() => HomeView());
+        Get.offAll(() => BottomnavbarView());
       } else {
         print(response.message.toString());
       }

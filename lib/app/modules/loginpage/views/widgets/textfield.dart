@@ -38,7 +38,7 @@ class CustomTextField extends StatelessWidget {
           Expanded(
             flex: 4,
             child: Container(
-              height: size.height / 11,
+              height: size.height/13,
               width: size.width / 1.5,
               decoration: BoxDecoration(
                 color: white,

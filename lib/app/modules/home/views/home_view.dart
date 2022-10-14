@@ -28,96 +28,98 @@ class HomeView extends GetView<HomeController> {
             ],
           ),
         ),
-        child: ListView(
-          children: [
-            Search(size: size),
-            height10,
-            height10,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  Iconify(
-                    Carbon.location_current,
-                    color: white,
-                  ),
-                  Text(
-                    "Kannur,Kerala,India",
-                    style: Lato(cl: white),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              child: Text(
-                "Latest",
-                style: Lato(cl: white, sz: 30, fw: FontWeight.bold),
-              ),
-            ),
-            LimitedBox(
-              maxHeight: 230,
-              child: ListView.builder(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemCount: lateestCarList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final data = lateestCarList[index];
-                  return CustomGlassContainer(data: data);
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Text(
-                    "Brands",
-                    style: Lato(cl: white, sz: 30, fw: FontWeight.bold),
-                  ),
-                  Spacer(),
-                  InkWell(
-                    onTap: () {
-                      Get.to(() => ViewAllView(),
-                          transition: Transition.cupertino);
-                    },
-                    child: Text(
-                      "view All",
-                      style: gfontsubtitlefont(cl: white),
+        child: SafeArea(
+          child: ListView(
+            children: [
+              Search(size: size),
+              height10,
+              height10,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Iconify(
+                      Carbon.location_current,
+                      color: white,
                     ),
-                  ),
-                ],
+                    Text(
+                      "Kannur,Kerala,India",
+                      style: Lato(cl: white),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            LimitedBox(
-              maxHeight: 100,
-              child: ListView.builder(
-                  itemCount: logos.length,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                child: Text(
+                  "Latest",
+                  style: Lato(cl: white, sz: 30, fw: FontWeight.bold),
+                ),
+              ),
+              LimitedBox(
+                maxHeight: 230,
+                child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
+                  itemCount: lateestCarList.length,
                   itemBuilder: (BuildContext context, int index) {
-                    final data = logos[index];
-                    return CustomBrandLogo(data: data);
-                  }),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Text(
-                "Available cars",
-                style: gfontsubtitlefont(cl: Colors.white60, sz: 20),
+                    final data = lateestCarList[index];
+                    return CustomGlassContainer(data: data);
+                  },
+                ),
               ),
-            ),
-            height30,
-            LimitedBox(
-              maxHeight: 200,
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return AvailableCarsContainer(size: size);
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Text(
+                      "Brands",
+                      style: Lato(cl: white, sz: 30, fw: FontWeight.bold),
+                    ),
+                    Spacer(),
+                    InkWell(
+                      onTap: () {
+                        Get.to(() => ViewAllView(),
+                            transition: Transition.cupertino);
+                      },
+                      child: Text(
+                        "view All",
+                        style: gfontsubtitlefont(cl: white),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              LimitedBox(
+                maxHeight: 100,
+                child: ListView.builder(
+                    itemCount: logos.length,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      final data = logos[index];
+                      return CustomBrandLogo(data: data);
+                    }),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Text(
+                  "Available cars",
+                  style: gfontsubtitlefont(cl: Colors.white60, sz: 20),
+                ),
+              ),
+              height30,
+              LimitedBox(
+                maxHeight: 200,
+                child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return AvailableCarsContainer(size: size);
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

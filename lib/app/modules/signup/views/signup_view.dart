@@ -37,13 +37,7 @@ class SignupView extends GetView<SignupController> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         CustomTextField(
-                            validate: (value) {
-                              if (value!.isEmpty) {
-                                return 'Enter  email';
-                              } else {
-                                return null;
-                              }
-                            },
+                           
                             obsureText: false,
                             controller: signUpController.emailController,
                             size: size,
@@ -51,13 +45,7 @@ class SignupView extends GetView<SignupController> {
                             title: "  enter email",
                             keyboard: TextInputType.name),
                         CustomTextField(
-                            validate: (value) {
-                              if (value!.isEmpty) {
-                                return 'enter  password';
-                              } else {
-                                return null;
-                              }
-                            },
+                          
                             obsureText: false,
                             controller: signUpController.passwordController,
                             size: size,
@@ -65,14 +53,7 @@ class SignupView extends GetView<SignupController> {
                             title: " enter password",
                             keyboard: TextInputType.name),
                         CustomTextField(
-                            validate: (value) {
-                              if (signUpController.confromPasswordController !=
-                                  signUpController.passwordController) {
-                                return 'doesnt match';
-                              } else {
-                                return null;
-                              }
-                            },
+                            
                             obsureText: false,
                             controller:
                                 signUpController.confromPasswordController,
@@ -85,8 +66,7 @@ class SignupView extends GetView<SignupController> {
                           child: ElevatedButton(
                             onPressed: () {
                               signUpController.onSignUpButtonPress();
-                              // Get.offAll(() => BottomnavbarView(),
-                              //     transition: Transition.circularReveal);
+                             
                             },
                             child: Text("Create"),
                             style: ElevatedButton.styleFrom(

@@ -48,12 +48,12 @@ class LoginEmailBox extends StatelessWidget {
               height10,
               CustomTextField(
                 obsureText: false,
-                validate: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter valid email';
-                  }
-                  return null;
-                },
+                // validate: (value) {
+                //   if (value!.isEmpty) {
+                //     return 'Please enter valid email';
+                //   }
+                //   return null;
+                // },
                 controller: loginController.emailController,
                 keyboard: TextInputType.emailAddress,
                 size: size,
@@ -65,12 +65,12 @@ class LoginEmailBox extends StatelessWidget {
               ),
               CustomTextField(
                 obsureText: true,
-                validate: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter valid password';
-                  }
-                  return null;
-                },
+                // validate: (value) {
+                //   if (value!.isEmpty) {
+                //     return 'Please enter valid password';
+                //   }
+                //   return null;
+                // },
                 controller: loginController.passwordController,
                 keyboard: TextInputType.number,
                 size: size,

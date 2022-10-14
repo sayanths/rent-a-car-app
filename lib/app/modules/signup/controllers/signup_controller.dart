@@ -10,9 +10,7 @@ class SignupController extends GetxController {
 
   onSignUpButtonPress() {
     if (signUpKey.currentState!.validate()) {
-      return Get.to(
-        () => OtpView(),
-      );
+      return signUpSubmit();
     }
   }
 
@@ -29,6 +27,8 @@ class SignupController extends GetxController {
       Get.to(
         () => OtpView(),
       );
+    } else {
+      Get.snackbar('Full field required', 'Please full fill the fields');
     }
   }
 }

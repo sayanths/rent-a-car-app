@@ -9,7 +9,9 @@ class Api {
   final dio = Dio(BaseOptions(baseUrl: BaseUrl.url));
 
   Future<LoginResponse?> loginUser(LoginModel model) async {
+    
     try {
+      
       // await check internet is offline or online
       final response = await dio.post(BaseUrl.login, data: model.toJson());
       if (response.statusCode == 200) {
