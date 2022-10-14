@@ -2,7 +2,6 @@ import 'package:carzz/app/modules/full_screen/views/full_screen_view.dart';
 import 'package:carzz/app/modules/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../colors/colors.dart';
 import '../../fonts/fonts.dart';
 

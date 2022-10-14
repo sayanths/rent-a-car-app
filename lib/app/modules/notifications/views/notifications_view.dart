@@ -13,8 +13,8 @@ class NotificationsView extends GetView<NotificationsController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: black,
-        body: customContainer(
-          SingleChildScrollView(
+        body: CustomContainer(
+          child:SingleChildScrollView(
             child: Column(
               children: [
                 HeadingsInNavBarScreen(title: 'Notification'),

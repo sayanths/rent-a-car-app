@@ -18,15 +18,11 @@ class ViewAllView extends GetView<ViewAllController> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: black,
-      body: customContainer(
-        ListView(
+      body: CustomContainer(
+        child: ListView(
           children: [
             height10,
 
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Location(),
-            // ),
             height10,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,7 +80,7 @@ class ViewAllView extends GetView<ViewAllController> {
             height10,
 
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ChoiceChipWidget(),
               ],
@@ -107,7 +103,7 @@ class ViewAllView extends GetView<ViewAllController> {
                     });
               }),
             ),
-         height10,
+            height10,
             // Container(
             //   height: 300,
             //   width: size.width / 1.2,

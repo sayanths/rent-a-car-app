@@ -34,7 +34,6 @@ class ChoiceChipWidget extends StatelessWidget {
                   obj.choicChi(value, index);
                 },
                 elevation: 15,
-                
               );
             },
           );

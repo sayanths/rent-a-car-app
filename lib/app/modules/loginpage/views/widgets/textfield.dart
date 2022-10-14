@@ -7,7 +7,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType keyboard;
   final IconData icon;
   final String title;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String? Function(String?)? validate;
   final bool obsureText;
   const CustomTextField({
@@ -16,8 +16,9 @@ class CustomTextField extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.keyboard,
-    required this.controller, 
-    this.validate, required this.obsureText,
+    this.controller,
+    this.validate,
+    required this.obsureText,
   }) : super(key: key);
 
   final Size size;
@@ -25,7 +26,6 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height / 13,
       width: size.width / 1.5,
       child: Row(
         children: [
@@ -38,7 +38,7 @@ class CustomTextField extends StatelessWidget {
           Expanded(
             flex: 4,
             child: Container(
-              height: size.height / 13,
+              height: size.height/13,
               width: size.width / 1.5,
               decoration: BoxDecoration(
                 color: white,
@@ -49,17 +49,14 @@ class CustomTextField extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: TextFormField(
+                child: TextFormField(
                   obscureText: obsureText,
-                    validator:validate ,
-                    controller: controller,
-                    keyboardType: keyboard,
-                    decoration: InputDecoration(
-                      
-                      hintText: title,
-                      border: InputBorder.none,
-                    ),
+                  validator: validate,
+                  controller: controller,
+                  keyboardType: keyboard,
+                  decoration: InputDecoration(
+                    hintText: title,
+                    border: InputBorder.none,
                   ),
                 ),
               ),

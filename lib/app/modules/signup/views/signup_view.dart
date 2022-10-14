@@ -14,72 +14,72 @@ import '../controllers/signup_controller.dart';
 class SignupView extends GetView<SignupController> {
   @override
   Widget build(BuildContext context) {
-    final signUpController =Get.put(SignupController());
+    final signUpController = Get.put(SignupController());
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: black,
       body: SafeArea(
-        child: customContainer(
-          SingleChildScrollView(
+        child: CustomContainer(
+          child:SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                height50,
-                CustomBackArrowWithTitle(
-                  title: 'Create an Account',
-                ),
-                height50,
-                LoginGlassContainer(
-                  size: size,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CustomTextField(
-                        obsureText: false,
-                        controller: signUpController.nameController,
-                          size: size,
-                          icon: Icons.person,
-                          title: " Please enter the user name",
-                          keyboard: TextInputType.name),
-                      CustomTextField(
-                        obsureText: false,
-                        controller: signUpController.numberController,
-                          size: size,
-                          icon: Icons.call,
-                          title: " Please enter the number",
-                          keyboard: TextInputType.name),
-                      CustomTextField(
-                        obsureText: false,
-                        controller: signUpController.passwordController,
-                          size: size,
-                          icon: Icons.password,
-                          title: " Please enter the password",
-                          keyboard: TextInputType.name),
-                      CustomTextField(
-                        obsureText: false,
-                        controller: signUpController.confromPasswordController,
-                          size: size,
-                          icon: Icons.password_outlined,
-                          title: " conform password",
-                          keyboard: TextInputType.name),
-                      SizedBox(
-                        width: size.width / 1.5,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Get.offAll(() => BottomnavbarView(),
-                                transition: Transition.circularReveal);
-                          },
-                          child: Text("Create"),
-                          style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 55, 0, 255),
-                            shape: StadiumBorder(),
+            child: Form(
+              key: signUpController.signUpKey,
+              child: Column(
+                children: [
+                  height50,
+                  CustomBackArrowWithTitle(
+                    title: 'Create an Account',
+                  ),
+                  height50,
+                  LoginGlassContainer(
+                    size: size,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CustomTextField(
+                           
+                            obsureText: false,
+                            controller: signUpController.emailController,
+                            size: size,
+                            icon: Icons.person,
+                            title: "  enter email",
+                            keyboard: TextInputType.name),
+                        CustomTextField(
+                          
+                            obsureText: false,
+                            controller: signUpController.passwordController,
+                            size: size,
+                            icon: Icons.password,
+                            title: " enter password",
+                            keyboard: TextInputType.name),
+                        CustomTextField(
+                            
+                            obsureText: false,
+                            controller:
+                                signUpController.confromPasswordController,
+                            size: size,
+                            icon: Icons.password_outlined,
+                            title: " conform password",
+                            keyboard: TextInputType.name),
+                        SizedBox(
+                          width: size.width / 1.5,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              signUpController.onSignUpButtonPress();
+                             
+                            },
+                            child: Text("Create"),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(255, 55, 0, 255),
+                              shape: StadiumBorder(),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

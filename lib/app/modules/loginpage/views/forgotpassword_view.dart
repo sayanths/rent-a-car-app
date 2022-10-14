@@ -14,8 +14,8 @@ class ForgotpasswordView extends GetView {
     return Scaffold(
       backgroundColor: black,
       body: SafeArea(
-        child: customContainer(
-          Column(
+        child: CustomContainer(
+         child: Column(
             children: [
               height50,
               CustomBackArrowWithTitle(

@@ -15,8 +15,8 @@ class OtpView extends GetView {
     return Scaffold(
       backgroundColor: black,
       body: SafeArea(
-        child: customContainer(
-          SingleChildScrollView(
+        child: CustomContainer(
+         child: SingleChildScrollView(
             child: Column(
               children: [
                 height30,
